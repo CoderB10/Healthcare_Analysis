@@ -19,8 +19,6 @@ This repository compiles five detailed research case studies exploring diverse a
 
 ### Paper: DT-GPT | Large Language Model Digital Twin for Clinical Forecasting
 
-**Citation:** Authors TBD, Year TBD, preprint/venue TBD
-
 
 **Theme:**
 
@@ -124,9 +122,6 @@ This paper delves into how a fine‑tuned large language model, DT‑GPT, transf
 
 ### Paper: CDPred | Forecasting Cognitive Decline from Wearable Activity Data
 
-**Citation:** Authors TBD, Year TBD, Journal TBD
-**Scenario Tags:** disease-incidence, cognitive-decline, mortality-risk, wearable-sensing, early-screening
-
 **Theme:**
 
 This research investigates the predictive potential of everyday human movement captured via wearable sensors. Instead of relying on medical imaging or invasive testing, it decodes the rhythm and regularity of 24‑hour motion signals to forecast cognitive deterioration years in advance. The work demonstrates that harmonic and entropy‑based features extracted from accelerometer data hold meaningful physiological insights, enabling a non‑invasive, scalable biomarker for early dementia screening.
@@ -212,9 +207,6 @@ This research investigates the predictive potential of everyday human movement c
 
 ### Paper: Hybrid Data-Mined Clinical Pathway Simulation for Acute Coronary Syndrome
 
-**Citation:** Authors TBD, Year TBD, Venue TBD
-**Scenario Tags:** hospital-admissions, patient-flow, resource-allocation, length-of-stay, simulation-modeling
-
 **Theme:**
 
 This study integrates data mining and simulation science to make hospital process modeling more representative of clinical reality. By clustering thousands of patient journeys into data‑derived pathways and embedding them into a discrete‑event simulation, it captures the true variability of patient movement through departments. The hybrid model not only enhances predictive realism of length‑of‑stay and queue times but also serves as a strategic decision tool for capacity management.
@@ -287,9 +279,6 @@ This study integrates data mining and simulation science to make hospital proces
 ---
 
 ### Paper: Validating Local Hospital AI Models Using Global Benchmark Data (MIMIC-IV Study)
-
-**Citation:** Authors TBD, Year TBD, Journal TBD
-**Scenario Tags:** hospital-admissions, resource-allocation, machine-learning-validation, generalizability, model-benchmarking
 
 **Theme:**
 
