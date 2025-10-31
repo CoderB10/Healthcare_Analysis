@@ -50,6 +50,7 @@ This paper delves into how a fine‑tuned large language model, DT‑GPT, transf
 * **Fine-Tuning:** Supervised instruction-tuning on EHR text → output JSON forecast of lab/vital values.
 * **Loss Function:** Cross-entropy loss applied only on output text.
 * **Stabilization:** 30 trajectories generated per patient; averaged for final prediction.
+![Paper1 5](https://github.com/user-attachments/assets/6ab063c3-125d-4e54-a777-80f637b29a8a)
 
 ---
 
@@ -61,7 +62,7 @@ This paper delves into how a fine‑tuned large language model, DT‑GPT, transf
 * **Classical ML:** LightGBM, Linear Regression
 * **Deep Learning:** RNN, LSTM, Transformer, Temporal Fusion Transformer (TFT)
 * **Zero-Shot LLMs:** BioMistral‑7B (untrained), Qwen3‑32B — both poor
-* **Channel-Independent LLMs:** Time‑LLM, LLMTime — weaker due to independent variable prediction
+* **Channel-Independent LLMs:** Time‑LLM, LLMTime, weaker due to independent variable prediction
 
 **Advantage:** DT‑GPT is *channel‑dependent*, learning cross‑variable biological relations.
 
@@ -70,7 +71,7 @@ This paper delves into how a fine‑tuned large language model, DT‑GPT, transf
 ### 4. Evaluation (Reliability Tests)
 
 * **Data Split:** 80/10/10 by patient (ensures unseen patients at test time)
-* **Primary Metric:** Scaled MAE (MAE ÷ SD) — normalizes across lab value scales
+* **Primary Metric:** Scaled MAE (MAE ÷ SD), normalizes across lab value scales
 * **Secondary Metrics:**
 
   * **KS Statistic:** distribution alignment between forecast and real data
@@ -91,7 +92,7 @@ This paper delves into how a fine‑tuned large language model, DT‑GPT, transf
 
 **Results Summary:**
 
-* **Accuracy:** RMSE improved 1.3 – 3.4 pp vs. best baselines
+* **Accuracy:** RMSE improved 1.3 - 3.4 pp vs. best baselines
 * **Robustness:** Stable under extreme missingness (94 %) and noise
 * **Explainability:** Natural‑language rationale ~80 % correct by physician review
 
@@ -155,7 +156,7 @@ This research investigates the predictive potential of everyday human movement c
 * **Variants:**
 
   * **CDPred:** demographics + clinical
-  * **CDPred‑4:** + simple activity volume
+  * **CDPred‑4+:** simple activity volume
   * **CDPred‑4+:** + 98 harmonic features
 * **Hyperparameters:** max_depth=6, learning_rate=0.05, 500 trees; tuned via 5‑fold CV
 
@@ -241,6 +242,7 @@ This study integrates data mining and simulation science to make hospital proces
   3. Follows its pathway’s department-transition rules and length-of-stay distributions.
   4. Requests hospital resources (beds, surgery rooms); queues if unavailable.
 * **Forecast Output:** Aggregate hospital metrics—bed occupancy, queue lengths, average wait time, length-of-stay (LoS) distribution.
+![Paper3 1](https://github.com/user-attachments/assets/c128b43d-9ad7-46b0-b02e-bc13c3ca4b81)
 
 ### 4. Evaluation (Proving Reliability)
 
@@ -294,9 +296,9 @@ The paper examines AI model generalizability across scales by replicating a smal
 * **Missing Data Handling:** filled gaps using **median imputation** (feature-wise median replacement).
 * **Categorical Encoding:** applied **One-Hot Encoding** to convert text (e.g., gender) into numeric binary features.
 * **Outcome:** standardized, clean dataset identical in structure to Greek hospital data (13,991 cases).
+<img width="693" height="304" alt="boxplot" src="https://github.com/user-attachments/assets/365a55fd-a31f-4b10-bb7f-86a5ab13f821" />
 
 ### 2. Forecast Models Used (The Contestants)
-
 Five classic ML models trained and evaluated on the MIMIC-IV subset:
 
 1. **Linear Discriminant Analysis (LDA):** linear separation of admission vs. discharge.
@@ -333,37 +335,31 @@ Five classic ML models trained and evaluated on the MIMIC-IV subset:
 | KNN           | 0.7307      | 0.7112         | Weakest model                   |
 
 * **Random Forest Performance:**
-
   * **AUC:** 0.9999
   * **Sensitivity:** 99.97 %
   * **Specificity:** 99.99 %
   * Indicates robust pattern recognition at massive data scale.
 
 ### 5. Interpretation & Reliability
-
 * **Key Finding:** Random Forest consistently top across datasets.
 * **Validation:** MIMIC-IV benchmarking confirmed Greek model’s correctness and robustness.
 * **Overfitting Caveat:** 0.9999 AUC possibly inflated — memorization risk acknowledged by authors.
 
 **Results Summary:**
-
 * Random Forest validated as the optimal algorithm for hospital admission prediction.
 * Larger dataset amplified accuracy dramatically (data-scale effect).
 * Confirms feasibility of using open datasets for cross-site AI validation.
 
 **Robustness & Limits:**
-
 * Potential overfitting at near-perfect metrics.
 * Tested only on tabular data (no imaging/text).
 * External generalization beyond MIMIC-IV not verified.
 
 **Repro Notes:**
-
 * **Code/Repo:** not specified; reproducible via MIMIC-IV public access + Python ML stack.
 * **Data Access:** MIMIC-IV (public academic license); Greek hospital dataset (private).
 
 **Takeaways:**
-
 * Large-scale validation is essential for confirming small-hospital AI reliability.
 * MIMIC-IV can serve as a benchmarking standard for clinical ML validation.
 * Random Forest remains robust, interpretable, and reliable across dataset scales.
